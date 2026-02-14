@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Gimolo – GitHub Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app theme-play" id="app">
+    <header class="topbar">
+      <div class="brand-pill">
+        <div class="mark" aria-hidden="true">
+          <span class="c c1"></span><span class="c c2"></span><span class="c c3"></span><span class="c c4"></span>
+        </div>
+        <div class="brand">Gimolo</div>
+      </div>
+      <button class="icon-btn" id="profileBtn" aria-label="Profile">
+        <span class="avatar" aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main class="stage" id="screen"></main>
+
+    <nav class="nav">
+      <button class="nav-btn" data-screen="spin">Spin</button>
+      <button class="nav-btn" data-screen="profile">Profile</button>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
