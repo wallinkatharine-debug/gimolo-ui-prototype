@@ -1,0 +1,115 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #dff7ea, #cbe6ff);
+}
+
+.app {
+  max-width: 420px;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: #ddd;
+  border-radius: 50%;
+}
+
+.card {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.spin-button {
+  width: 180px;
+  height: 180px;
+  margin: 40px auto;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: radial-gradient(circle at 30% 30%, #7de3b2, #4aa3ff, #b57bff);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #4aa3ff, #7de3b2);
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.secondary-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  background: #f0f0f0;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.progress {
+  height: 10px;
+  background: #eee;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 60%;
+  background: #7de3b2;
+  border-radius: 10px;
+}
+
+.dot-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  margin: 20px;
+}
+
+.dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #4aa3ff;
+}
+
+.bottom-nav {
+  margin-top: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255,255,255,0.8);
+}
