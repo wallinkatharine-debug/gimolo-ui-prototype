@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Gimolo – Pilot Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app vibe-playful">
+    <header class="topbar">
+      <button class="brand-pill" id="brandToSpin" aria-label="Go to Spin">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="brand-text">Gimolo</span>
+      </button>
+
+      <div class="top-actions">
+        <button id="soundToggle" class="icon-pill" aria-label="Sound toggle">
+          <span class="icon" aria-hidden="true">🔊</span><span class="label">Sound</span>
+          <span class="switch" aria-hidden="true"><span class="knob"></span></span>
+        </button>
+        <button id="civicToggle" class="icon-pill" aria-label="Civic toggle">
+          <span class="icon" aria-hidden="true">🌱</span><span class="label">Civic</span>
+          <span class="switch off" aria-hidden="true"><span class="knob"></span></span>
+        </button>
+        <button id="profileBtn" class="avatar" aria-label="Open profile">👤</button>
+      </div>
+    </header>
+
+    <main class="screens">
+
+      <!-- SPIN -->
+      <section id="screenSpin" class="screen active" aria-label="Spin Screen">
+        <div class="filters-row" aria-label="Filters">
+          <button class="chip" data-filter="time"><span class="dot"></span><span class="chipLabel">Time</span><span class="chipValue" id="chipTime">Any</span></button>
+          <button class="chip" data-filter="energy"><span class="dot"></span><span class="chipLabel">Energy</span><span class="chipValue" id="chipEnergy">Any</span></button>
+          <button class="chip" data-filter="where"><span class="dot"></span><span class="chipLabel">Where</span><span class="chipValue" id="chipWhere">Any</span></button>
+          <button class="chip" data-filter="lane"><span class="dot"></span><span class="chipLabel">Lane</span><span class="chipValue" id="chipLane">Any</span></button>
+          <button class="chip" data-filter="adjust"><span class="dot"></span><span class="chipLabel">Adjust</span><span class="chipValue" id="chipVibe">Playful</span></button>
+        </div>
+
+        <div class="wheel-wrap">
+          <button id="spinWheel" class="wheel" aria-label="Spin">
+            <div class="wheel-gloss" aria-hidden="true"></div>
+            <div class="wheel-text">SPIN</div>
+          </button>
+          <div class="wheel-meta" id="matchesMeta">Matches: — • Tier: — • Scope: —</div>
+        </div>
+
+        <div class="card" id="spinResultCard" hidden>
+          <div class="card-top">
+            <div class="eyebrow">YOUR NEXT MOVE</div>
+            <button id="revealBtn" class="mini-pill" title="Reveal bonus">Reveal ✨</button>
+          </div>
+
+          <div class="title-row">
+            <div class="emoji" id="activityEmoji">🎯</div>
+            <h1 class="title" id="activityTitle">—</h1>
+          </div>
+
+          <p class="desc" id="activityDesc">Spin to get an activity.</p>
+          <div class="meta-chips" id="activityMetaChips"></div>
+
+          <div class="cta-row">
+            <button id="startBtn" class="btn primary">Start →</button>
+            <button id="spinAgainBtn" class="btn ghost">Spin again</button>
+          </div>
+        </div>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <button id="navLanes" class="nav-btn">Lanes</button>
+          <button id="navProfile" class="nav-btn">Profile</button>
+        </nav>
+      </section>
+
+      <!-- ACTIVITY -->
+      <section id="screenActivity" class="screen" aria-label="Activity Screen">
+        <div class="card hero">
+          <div class="card-top">
+            <div class="eyebrow">YOUR NEXT MOVE</div>
+            <button id="activityBackToSpin" class="mini-pill">Back to Spin</button>
+          </div>
+
+          <div class="title-row">
+            <div class="emoji" id="activityEmoji2">🎯</div>
+            <h1 class="title" id="activityTitle2">—</h1>
+          </div>
+
+          <p class="desc" id="activityDesc2">—</p>
+          <div class="meta-chips" id="activityMetaChips2"></div>
+
+          <div class="divider"></div>
+
+          <div class="cta-row">
+            <button id="activityStart" class="btn primary">Start →</button>
+            <button id="activitySpinAgain" class="btn ghost">Spin again</button>
+            <button id="activityAdjust" class="btn subtle">Adjust choice</button>
+          </div>
+        </div>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <button id="navLanes2" class="nav-btn">Lanes</button>
+          <button id="navProfile2" class="nav-btn">Profile</button>
+        </nav>
+      </section>
+
+      <!-- IN PROGRESS -->
+      <section id="screenProgress" class="screen" aria-label="In Progress Screen">
+        <div class="card hero">
+          <div class="progress-head">
+            <h1 class="progress-title">In Progress</h1>
+            <div class="timer" id="timer">02:00</div>
+          </div>
+
+          <div class="sub" id="progressName">—</div>
+          <div class="subtle-copy" id="progressCopy">Try it now — keep it lightweight.</div>
+
+          <div class="bar"><div class="fill" id="progressFill"></div></div>
+
+          <div class="cta-row">
+            <button id="markDone" class="btn primary">Mark as Done</button>
+            <button id="progressSpinAgain" class="btn ghost">Spin again</button>
+            <button id="progressProfile" class="btn subtle">Profile</button>
+          </div>
+        </div>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <button id="navLanes3" class="nav-btn">Lanes</button>
+          <button id="navProfile3" class="nav-btn">Profile</button>
+        </nav>
+      </section>
+
+      <!-- PROFILE -->
+      <section id="screenProfile" class="screen" aria-label="Profile Screen">
+        <div class="card hero">
+          <div class="card-top">
+            <div class="eyebrow">PROFILE</div>
+            <button id="profileBack" class="mini-pill">Back</button>
+          </div>
+          <h1 class="title">Your Dots</h1>
+          <div class="dots" id="dotGrid" aria-label="Dot world"></div>
+          <div class="divider"></div>
+          <h2 class="section-title">Recent</h2>
+          <div class="recent" id="recentList"></div>
+        </div>
+      </section>
+
+      <!-- LANES -->
+      <section id="screenLanes" class="screen" aria-label="Lanes Screen">
+        <div class="card hero">
+          <div class="card-top">
+            <div class="eyebrow">LANES</div>
+            <button id="lanesBack" class="mini-pill">Back</button>
+          </div>
+          <h1 class="title">Choose a lane</h1>
+          <p class="desc">Selecting a lane biases the next spin — you can always return to “Any”.</p>
+          <div class="lane-list" id="laneList"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- MODAL -->
+    <div id="modalBackdrop" class="backdrop" hidden></div>
+    <div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-label="Filter modal">
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle">Filter</div>
+        <button id="modalClose" class="mini-pill">Close</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-foot">
+        <button id="modalClear" class="btn ghost">Any</button>
+        <button id="modalApply" class="btn primary">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
